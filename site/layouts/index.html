@@ -5,7 +5,11 @@
         {{ range .Site.RegularPages }}
         <div class="row mb-4">
             <div class="col-sm">
-                <img src="{{ .Params.image }}" class="img-fluid rounded mx-auto d-block" alt="{{ .Title }}">
+                {{ with .Params.image }}
+                    <img src="{{ . | absURL }}" class="img-fluid rounded mx-auto d-block" alt="{{ .Title }}">
+                {{ else }}
+                    <p>Nessuna immagine disponibile</p>
+                {{ end }}
             </div>
             <div class="col-sm">
                 <h2>{{ .Title }}</h2>
