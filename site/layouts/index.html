@@ -1,9 +1,9 @@
 {{ define "main" }}
  
  {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
-     <div class="container">
+    <div class="container">
         <h1>Tutti i Post del Blog</h1>
-        {{ range .Pages }}
+        {{ range .post }}
         <div class="row mb-4">
             <div class="col-sm">
                 <img src="{{ .Params.image }}" class="img-fluid rounded mx-auto d-block" alt="{{ .Title }}">
@@ -16,5 +16,4 @@
         </div>
         {{ end }}
     </div>
-
  {{ end }}
