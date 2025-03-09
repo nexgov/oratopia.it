@@ -1,18 +1,21 @@
-<div class="pv5 pv6-l ph3 bg-center cover" style="background-image: url('{{.imageUrl}}')">
-  <div class="mw7 center ph3">
-    <div class="db mb3">
-      <div class="mw7 relative bg-fix-primary mb3">
-        <h1 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">
-          {{.title}}
-        </h1>
-      </div>
-      <div class="mw7 relative bg-fix-primary">
-        {{ if .subtitle }}
-        <p class="b f4 di lh-title mb3 white mw6 bg-primary">
-          {{.subtitle}}
-        </p>
-        {{ end }}
-      </div>
+<section class="it-hero-wrapper it-dark it-overlay">
+  <!-- - img-->
+  <div class="img-responsive-wrapper">
+    <div class="img-responsive">
+        <div class="img-wrapper"><img src="https://animals.sandiegozoo.org/sites/default/files/2016-08/animals_hero_mountains.jpg" title="titolo immagine" alt="descrizione immagine"></div>
     </div>
   </div>
-</div>
+  <!-- - texts-->
+  <div class="container">
+    <div class="row">
+        <div class="col-12">
+          <div class="it-hero-text-wrapper bg-dark">
+              <span class="it-category">Titolo occhiello</span>
+              <h2>Titolo della sezione</h2>
+              <p class="d-none d-lg-block">Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Dictum sit amet justo donec enim diam vulputate ut. Eu nisl nunc mi ipsum faucibus.</p>
+              <div class="it-btn-container"><a class="btn btn-sm btn-secondary" href="#">Azione primaria</a></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
