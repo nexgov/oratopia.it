@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard di Amministrazione</title>
+    <style>
+        /* Reset di base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo della dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Container principale */
+        .dashboard-container {
+            display: flex;
+            width: 80%;
+            min-height: 80vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            width: 250px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contenuto principale */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        /* Bottone */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Lista post */
+        .post-list table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .post-list th, .post-list td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .post-list th {
+            background-color: #f4f4f9;
+        }
+
+        .edit-btn, .delete-btn {
+            background-color: #ff9800;
+            margin-right: 10px;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+        }
+
+        .delete-btn:hover, .edit-btn:hover {
+            background-color: #ff5722;
+        }
+
+        /* Form di creazione post */
+        .create-post-form {
+            display: none;
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .create-post-form.show {
+            display: block;
+        }
+
+        .create-post-form input, .create-post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .create-post-form button {
+            background-color: #008CBA;
+            margin-top: 10px;
+        }
+
+        .create-post-form button:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="{{ "/admin" | relURL }}">Home</a></li>
+                <li><a href="{{ "/admin/posts" | relURL }}">Post</a></li>
+                <li><a href="{{ "/admin/settings" | relURL }}">Impostazioni</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Gestione Post</h1>
+                <button class="btn" id="create-post-btn">Crea Nuovo Post</button>
+            </header>
+
+            <section class="post-list">
+                <h2>Elenco Post</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titolo</th>
+                            <th>Data</th>
+                            <th>Azioni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{ range .Site.RegularPages }}
+                        <tr>
+                            <td>{{ .Title }}</td>
+                            <td>{{ .Date.Format "2006-01-02" }}</td>
+                            <td><button class="btn edit-btn">Modifica</button><button class="btn delete-btn">Elimina</button></td>
+                        </tr>
+                        {{ end }}
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="create-post-form" id="create-post-form">
+                <h2>Crea Nuovo Post</h2>
+                <form action="/admin/create" method="POST">
+                    <label for="title">Titolo:</label>
+                    <input type="text" id="title" name="title" required>
+
+                    <label for="date">Data di Pubblicazione:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="description">Descrizione:</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <label for="body">Contenuto:</label>
+                    <textarea id="body" name="body" required></textarea>
+
+                    <button type="submit" class="btn">Salva Post</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Funzione per mostrare e nascondere il modulo di creazione del post
+        const createPostBtn = document.getElementById('create-post-btn');
+        const createPostForm = document.getElementById('create-post-form');
+
+        createPostBtn.addEventListener('click', () => {
+            createPostForm.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
