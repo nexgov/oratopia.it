@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="{{ $.Site.Language.Lang }}">
   {{ partial "head" . }}
+  <style>
+            body {
+            font-family: Arial, sans-serif;
+        }
+  </style>
   <body class="sans-serif">
 
     {{ block "header" . }}{{ partial "nav" . }}{{end}}
