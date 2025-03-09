@@ -59,3 +59,14 @@
     </div>
   </div>
 </header>
+<script>
+  document.getElementById('login-btn').addEventListener('click', function(event) {
+  event.preventDefault(); // Impedisce l'azione di default (navigazione)
+  if (window.netlifyIdentity) {
+    netlifyIdentity.open(); // Apre il pop-up di login
+  } else {
+    console.log("Netlify Identity non è disponibile.");
+  }
+});
+
+</script>
