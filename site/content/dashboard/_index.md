@@ -4,4 +4,4 @@ date: 2025-03-09
 draft: false
 ---
 
-{{< partial "dashboard.html" >}}
+{{< partial "dash.html" >}}
