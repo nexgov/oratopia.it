@@ -1,12 +1,7 @@
 <head>
 
   <title>{{ .Title }} | {{ $.Site.Title }}</title>
-
-  {{ $stylesheet := .Site.Data.webpack.main }}
-  {{ with $stylesheet.css }}
-    <link href="{{ relURL . }}" rel="stylesheet">
-  {{ end }}
-<script src="
+	<script src="
 https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/js/bootstrap-italia.min.js
 "></script>
 <link href="
