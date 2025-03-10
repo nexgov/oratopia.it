@@ -5,32 +5,18 @@
         {{ range .Site.RegularPages }}
         <div class="row mb-4">
             <div class="col-sm">
+                {{ with .Params.image }}
+                    <img src="{{ .Parent.RelPermalink }}{{ . }}" class="img-fluid rounded mx-auto d-block" alt="Immagine del post">
+                {{ else }}
+                    <p>Nessuna immagine disponibile</p>
+                {{ end }}
+            </div>
+            <div class="col-sm">
                 <h2>{{ .Title }}</h2>
                 <p>{{ .Params.description }}</p>
                 <a href="{{ .Permalink }}" class="btn btn-primary">Leggi di più</a>
-<hr>
             </div>
-            <div class="col-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" height="200px" viewBox="0 -960 960 960" width="200px" fill="#000"><path d="M640-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v440L640-120Zm-40-80v-80q0-33 23.5-56.5T680-360h80v-400H200v560h400ZM440-320h80v-240h120v-80H320v80h120v240Zm160 120Zm-400 0v-560 560Z"></path></svg>            </div>
         </div>
         {{ end }}
     </div>
 {{ end }}
-
-<script>
-    function getRandomColor() {
-    return '#' + Math.floor(Math.random()*16777215).toString(16);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const svgElement = document.getElementById("randomColorSvg");
-    
-    function changeColor() {
-        const newColor = getRandomColor();
-        svgElement.setAttribute("fill", newColor);
-    }
-    
-    setInterval(changeColor, 1000);
-});
-
-</script>
