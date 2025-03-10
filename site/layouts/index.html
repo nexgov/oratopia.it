@@ -16,3 +16,21 @@
         {{ end }}
     </div>
 {{ end }}
+
+<script>
+    function getRandomColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const svgElement = document.getElementById("randomColorSvg");
+    
+    function changeColor() {
+        const newColor = getRandomColor();
+        svgElement.setAttribute("fill", newColor);
+    }
+    
+    setInterval(changeColor, 1000);
+});
+
+</script>
