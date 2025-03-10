@@ -6,7 +6,7 @@
         <div class="row mb-4">
             <div class="col-sm">
                 {{ with .Params.image }}
-                    <img src="{{ .Page.RelPermalink }}{{ . }}" class="img-fluid rounded mx-auto d-block" alt="Immagine del post">
+                    <img src="{{ .Parent.RelPermalink }}{{ . }}" class="img-fluid rounded mx-auto d-block" alt="Immagine del post">
                 {{ else }}
                     <p>Nessuna immagine disponibile</p>
                 {{ end }}
