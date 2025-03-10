@@ -2,19 +2,14 @@
     {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
     <div class="container">
         <h1>Tutti i Post del Blog</h1>
+        <hr>
         {{ range .Site.RegularPages }}
         <div class="row mb-4">
-            <div class="col-sm">
-                {{ with .Params.image }}
-                    <img src="{{ .Parent.RelPermalink }}{{ . }}" class="img-fluid rounded mx-auto d-block" alt="Immagine del post">
-                {{ else }}
-                    <p>Nessuna immagine disponibile</p>
-                {{ end }}
-            </div>
             <div class="col-sm">
                 <h2>{{ .Title }}</h2>
                 <p>{{ .Params.description }}</p>
                 <a href="{{ .Permalink }}" class="btn btn-primary">Leggi di più</a>
+            <hr>
             </div>
         </div>
         {{ end }}
