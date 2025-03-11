@@ -8,7 +8,7 @@ description: La catalogazione derivata è un processo fondamentale nelle
   cataloghi bibliografici. Questo metodo si basa sull'utilizzo di record
   bibliografici già esistenti, recuperandoli da database condivisi o da altre
   istituzioni, per evitare la duplicazione dello sforzo di catalogazione.
-image: https://www.bibliotecheinnovative.it/wp-content/uploads/2021/05/6-formazione.jpg
+image: 4-catalogazione.jpg
 ---
 #### Cos'è la catalogazione derivata?
 
