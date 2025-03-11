@@ -1,6 +1,6 @@
 ---
 title: "Il Codice Decimale Dewey: La Chiave per Organizzare la Conoscenza"
-date: 2025-03-11T18:54:59.386Z
+date: 2025-03-05T18:54:59.386Z
 description: Se sei mai entrato in una biblioteca, hai probabilmente incontrato
   il sistema di classificazione decimale Dewey, anche se non te ne sei accorto.
   Questo sistema, sviluppato nel 1876 da Melvil Dewey, è una delle metodologie
