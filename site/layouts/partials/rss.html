@@ -1,0 +1,11 @@
+{{ $feeds := .Site.Params.rss_feeds }}
+{{ range $feeds }}
+  {{ $rss := getJSON $ .url }}
+  <h2>Blog: {{ .name }}</h2>
+  {{ range first 5 $rss.items }}
+    <article>
+      <h3><a href="{{ .link }}" target="_blank">{{ .title }}</a></h3>
+      <p>{{ .description | truncate 150 }}</p>
+    </article>
+  {{ end }}
+{{ end }}
