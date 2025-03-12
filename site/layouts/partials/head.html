@@ -1,5 +1,14 @@
 <head>
 
+	    {{- if eq .Type "post" -}}
+        <meta name="description" content="{{ .Params.meta_description | default .Summary }}">
+        <meta name="keywords" content="{{ .Params.meta_keywords | default `blog, articoli, lettura` }}">
+    {{- else -}}
+        <title>{{ .Site.Title }}</title>
+        <meta name="description" content="Scopri articoli e approfondimenti sul mondo delle biblioteche, lettura e cultura.">
+        <meta name="keywords" content="biblioteca, libri, cultura, lettura, recensioni">
+    {{- end -}}
+
   <title>Bibliotecando</title>
 	<script src="
 https://cdn.jsdelivr.net/npm/bootstrap-italia@2.13.4/dist/js/bootstrap-italia.min.js
