@@ -3,90 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Amministrazione</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
-        .container { width: 80%; margin: 50px auto; }
-        h1 { text-align: center; margin-bottom: 20px; }
-        .login, .dashboard, .new-post { display: none; }
-        .visible { display: block; }
-        input[type="text"], input[type="password"], textarea { width: 100%; padding: 8px; margin: 8px 0; }
-        button { padding: 10px 20px; cursor: pointer; }
-        .post { background: white; padding: 15px; margin: 10px 0; border-radius: 5px; }
-        .post-actions { margin-top: 10px; }
-        .post-actions button { margin-right: 5px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Dashboard Amministrazione</h1>
-
-        <!-- Sezione di Login -->
-        <div class="login visible" id="login-section">
-            <h2>Login</h2>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
-            <button onclick="login()">Accedi</button>
-        </div>
-
-        <!-- Sezione Dashboard -->
-        <div class="dashboard" id="dashboard-section">
-            <h2>Elenco dei Post</h2>
-            <div id="posts"></div>
-            <button onclick="showNewPostForm()">Aggiungi Nuovo Post</button>
-        </div>
-
-        <!-- Sezione Creazione Nuovo Post -->
-        <div class="new-post" id="new-post-section">
-            <h2>Crea Nuovo Post</h2>
-            <input type="text" id="post-title" placeholder="Titolo del Post">
-            <textarea id="post-content" placeholder="Contenuto del Post"></textarea>
-            <button onclick="addPost()">Salva</button>
-            <button onclick="showDashboard()">Annulla</button>
-        </div>
-    </div>
-
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script>
-        // Simulazione di autenticazione
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (username === 'admin' && password === 'password') {
-                document.getElementById('login-section').classList.remove('visible');
-                document.getElementById('dashboard-section').classList.add('visible');
-            } else {
-                alert('Credenziali non valide!');
-            }
-        }
-
-        // Visualizza il form per creare un nuovo post
-        function showNewPostForm() {
-            document.getElementById('dashboard-section').classList.remove('visible');
-            document.getElementById('new-post-section').classList.add('visible');
-        }
-
-        // Ritorna alla dashboard
-        function showDashboard() {
-            document.getElementById('new-post-section').classList.remove('visible');
-            document.getElementById('dashboard-section').classList.add('visible');
-        }
-
-        // Aggiungi un nuovo post alla dashboard
-        function addPost() {
-            const title = document.getElementById('post-title').value;
-            const content = document.getElementById('post-content').value;
-            const postsContainer = document.getElementById('posts');
-            const postElement = document.createElement('div');
-            postElement.className = 'post';
-            postElement.innerHTML = `<h3>${title}</h3><p>${content}</p><div class='post-actions'><button onclick='deletePost(this)'>Elimina</button></div>`;
-            postsContainer.appendChild(postElement);
-            showDashboard();
-        }
-
-        // Elimina un post
-        function deletePost(button) {
-            button.parentElement.parentElement.remove();
+        if (!document.cookie.includes("nf_jwt")) {
+            window.location.href = "/.netlify/functions/authenticate";
         }
     </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Dashboard</h1>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h2>Utenti</h2>
+                    <p>150</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h2>Vendite</h2>
+                    <p>€10.000</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h2>Ordini</h2>
+                    <p>320</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
