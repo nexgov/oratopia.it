@@ -24,12 +24,6 @@
     {{ $script := .Site.Data.webpack.main }}
     {{ with $script.js }}
       <script src="{{ relURL . }}"></script>
-    <script>
-      if (window.location.hostname !== "bibliotecando.it") {
-            window.location.href = "https://bibliotecando.it/404/";
-          }
-
-    </script>
     {{ end }}
   </body>
 </html>
