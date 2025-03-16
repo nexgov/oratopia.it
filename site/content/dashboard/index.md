@@ -1,4 +1,0 @@
----
-Layout: dashboard
-Title: DBS
----
