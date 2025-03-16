@@ -10,10 +10,9 @@
       <p>{{ .Description }}</p>
       {{ with .Resources.Get .Params.image }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" />{{ end }}
       {{ .Content }}
-<div class="alert alert-info" role="alert">
-      <p>{{ .Author }}</p>
-</div>
-    
+    <div class="alert alert-info" role="alert">
+      <p>Post realizzato da {{ .Author }}</p>
+    </div>
     </div>
   </div>
 </div>
