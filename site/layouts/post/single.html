@@ -11,7 +11,7 @@
       {{ with .Resources.Get .Params.image }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" />{{ end }}
       {{ .Content }}
     <div class="alert alert-info" role="alert">
-      <p>Post realizzato da {{ .Author }}</p>
+      <p>Post realizzato da {{ Author }}</p>
     </div>
     </div>
   </div>
