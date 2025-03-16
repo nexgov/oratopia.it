@@ -1,18 +1,29 @@
 <section class="it-hero-wrapper it-dark it-overlay">
-  <!-- - img-->
+  <!-- Immagine di sfondo dal post -->
   <div class="img-responsive-wrapper">
     <div class="img-responsive">
-        <div class="img-wrapper"><img src="https://gabrieljones.it/assets/images/WhatsApp%20Image%202025-03-05%20at%2008.18.07.jpeg" title="Biblioteca" alt="Biblioteca"></div>
+      <div class="img-wrapper">
+        <!-- Hugo template per l'immagine del post -->
+        <img src="{{ .Site.RegularPages.First .Params.image }}" alt="Immagine del post">
+      </div>
     </div>
   </div>
-  <!-- - texts-->
+
+  <!-- Testo del post -->
   <div class="container">
     <div class="row">
         <div class="col-12">
           <div class="it-hero-text-wrapper bg-dark">
-              <span class="it-category">#about</span>
-              <h2>Benvenuti su Bibliotecando</h2>
-              <div class="it-btn-container"><a class="btn btn-sm btn-secondary" href="https://gabrieljones.it/bibliotecando/">Scopri sul progetto ( Link Esterno )</a></div>
+              <!-- Categoria del post -->
+              <span class="it-category">#{{ .Site.RegularPages.First .Params.category }}</span>
+              <!-- Titolo del post -->
+              <h2>{{ .Site.RegularPages.First.Title }}</h2>
+              <!-- Estratto del post -->
+              <p>{{ .Site.RegularPages.First.Intro }}</p>
+              <!-- Link al post -->
+              <div class="it-btn-container">
+                <a class="btn btn-sm btn-secondary" href="{{ .Site.RegularPages.First.Permalink }}">Leggi il post completo</a>
+              </div>
           </div>
         </div>
     </div>
