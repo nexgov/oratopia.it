@@ -20,7 +20,7 @@ Credetemi, leggere Heartstopper è come una boccata di energia positiva che ti f
 
 Non lasciatevelo scappare, vi assicuro che vi lascerà con il cuore pieno di speranza e tanta voglia di amare senza paura. 💫❤️
 
-\#Heartstopper #AliceOseman #LettureConsigliate #Fumetti #Amore #Accettazione #LGBTQIA
+[\#Heartstopper](https://www.instagram.com/explore/search/keyword/?q=%23heartstopper) [\#AliceOseman](https://www.instagram.com/explore/search/keyword/?q=%23AliceOseman) [\#LettureConsigliate](https://www.instagram.com/explore/search/keyword/?q=%23LettureConsigliate) [\#Fumetti](https://www.instagram.com/explore/search/keyword/?q=%23Fumetti) [\#Amore](https://www.instagram.com/explore/search/keyword/?q=%23amore) [\#LGBTQIA](https://www.instagram.com/explore/search/keyword/?q=%23lgbtqia)
 
 ### LinkOPAC
 
