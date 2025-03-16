@@ -5,14 +5,12 @@
     <div class="flex justify-between grey-3">
       <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
       <p>Read in {{ .ReadingTime }} minutes</p>
+      <hr>
     </div>
     <div class="cms mw6">
       <p>{{ .Description }}</p>
       {{ with .Resources.Get .Params.image }}<img src="{{ .RelPermalink }}" alt="{{ $.Title }}" />{{ end }}
       {{ .Content }}
-    <div class="alert alert-info" role="alert">
-      <p>Post realizzato da {{ .Author }}</p>
-    </div>
     </div>
   </div>
 </div>
