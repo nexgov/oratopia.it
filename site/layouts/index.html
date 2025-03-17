@@ -6,9 +6,11 @@
         {{ range .Site.RegularPages }}
         <div class="row mb-4">
             <div class="col-sm">
+                <a href="{{ .Permalink }}">
                 <h2>{{ .Title }}</h2>
                 <p>{{ .Params.description }}</p>
                 <a href="{{ .Permalink }}" class="btn btn-primary">Leggi di più</a>
+                </a>
             <hr>
             </div>
         </div>
